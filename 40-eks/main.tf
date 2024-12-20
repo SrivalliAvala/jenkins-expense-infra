@@ -65,7 +65,7 @@ module "eks" {
         ElasticLoadBalancingFullAccess = "arn:aws:iam::aws:policy/ElasticLoadBalancingFullAccess"
       }
       # EKS takes AWS Linux 2 as it's OS to the nodes
-      key_name = bastion-key
+      key_name = data.aws_key_pair.my-key.key_name
     }
   }
 
