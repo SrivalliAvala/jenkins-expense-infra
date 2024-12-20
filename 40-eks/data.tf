@@ -37,3 +37,7 @@ data "aws_ami" "joindevops" {
         values = ["hvm"]
     }
 }
+
+data "aws_key_pair" "my-key" {
+  key_name = "bastion-key"  # Replace with your key pair name
+}

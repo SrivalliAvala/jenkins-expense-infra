@@ -1,11 +1,11 @@
-resource "aws_key_pair" "eks" {
+/* resource "aws_key_pair" "eks" {
   key_name   = "eks"
-  # you can paste the public key directly like this
-  #public_key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIL6ONJth+DzeXbU3oGATxjVmoRjPepdl7sBuPzzQT2Nc sivak@BOOK-I6CR3LQ85Q"
+  you can paste the public key directly like this
+  # public_key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIL6ONJth+DzeXbU3oGATxjVmoRjPepdl7sBuPzzQT2Nc sivak@BOOK-I6CR3LQ85Q"
   //public_key = file("~/.ssh/eks.pub")
   public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDLGZPHVSeBXabiLXoEG7q8hAOeexhNoNRyNf5FBGOFhZXusLPiYg7jjhVvmv6RZSUw8FJjdNjT2gtCA1eCuxACPxo5/LyKg2LBF5VN9FgYl/OT64s6m6mnl59jWIXR7yu0/4IS4APnouE4H0uRKwhd+DmYfv25kY/NkjwVKRba1Ri+4rJBO+ctRmwfHmaBPiXTYW+MVGrILAXMVpq6wmq3XifaQZrNWn22zfvwYAtLJVlDcBYNkd459Ykpa36zgsMZ/X7/+1u/hOr+6UompRsaqrrmyFqwtQRwYP85zcoQVxyMP4hVk30fJJuv+spb6kyQ8rzaTkpxmgWKyzuXzJhh ushas@SrivalliAvala"
   # ~ means windows home directory
-}
+} */
 
 module "eks" {
   source  = "terraform-aws-modules/eks/aws"
@@ -65,7 +65,7 @@ module "eks" {
         ElasticLoadBalancingFullAccess = "arn:aws:iam::aws:policy/ElasticLoadBalancingFullAccess"
       }
       # EKS takes AWS Linux 2 as it's OS to the nodes
-      key_name = aws_key_pair.eks.key_name
+      key_name = bastion-key
     }
   }
 

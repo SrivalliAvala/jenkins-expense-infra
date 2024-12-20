@@ -10,7 +10,7 @@ terraform {
     bucket = "daws81s-rs"
     key    = "expense-vpc"
     region = "us-east-1"
-    dynamodb_table = "daws81s-remote"
+    dynamodb_table = "daws81s-locking"
   }
 }
 
